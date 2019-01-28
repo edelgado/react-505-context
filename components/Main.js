@@ -49,12 +49,14 @@ class Main extends React.Component {
 
   render() {
     return(
-      <UserContext.Provider value={this.state.user}>
+      <UserContext.Provider value={{
+        user: this.state.user,
+        toggleUpdate: () => this.toggleUpdate(),
+        handleUpdate: (e) => this.handleUpdate(e)
+      }}>
         <React.Fragment>
           <Layout
             theme={this.state.theme}
-            toggleUpdate={() => this.toggleUpdate()}
-            handleUpdate={(e) => this.handleUpdate(e)}
             onThemeChange={(e) => this.onThemeChange(e.target.value)}>
             { this.props.children }
           </Layout>

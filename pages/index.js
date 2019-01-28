@@ -2,9 +2,9 @@ import UserContext from "../components/UserContext"
 
 const Index = () => (
   <UserContext.Consumer>
-    {(user) => (
+    {(context) => (
       <React.Fragment>
-        <h1>{user.name}'s Accounts</h1>
+        <h1>{context.user.name}'s Accounts</h1>
         <div className="clearfix">
           <div className="card">
             <h3>Checking</h3>

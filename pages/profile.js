@@ -1,21 +1,21 @@
 import themes from '../lib/themes'
 import UserContext from "../components/UserContext"
 
-const Profile = ({theme, onThemeChange, toggleUpdate, handleUpdate}) => (
+const Profile = ({theme, onThemeChange}) => (
   <UserContext.Consumer>
-    {(user) => (
+    {(context) => (
       <React.Fragment>
-        <h1>{user.name}'s Profile</h1>
+        <h1>{context.user.name}'s Profile</h1>
         <div className="clearfix">
           <div className="card">
             <h3>Contact Information</h3>
-            {user.updating ?
-              <form onSubmit={handleUpdate}>
+            {context.user.updating ?
+              <form onSubmit={context.handleUpdate}>
                 <label>
-                  Name: <input type="text" name="userName" defaultValue={user.name}/>
+                  Name: <input type="text" name="userName" defaultValue={context.user.name}/>
                 </label>
                 <label>
-                  Email: <input type="text" name="userEmail" defaultValue={user.email}/>
+                  Email: <input type="text" name="userEmail" defaultValue={context.user.email}/>
                 </label>
                 <input type="submit" value="Save" />
               </form>
@@ -25,17 +25,17 @@ const Profile = ({theme, onThemeChange, toggleUpdate, handleUpdate}) => (
                   <thead>
                   <tr>
                     <th>Name:</th>
-                    <td>{user.name}</td>
+                    <td>{context.user.name}</td>
                   </tr>
                   </thead>
                   <tbody>
                   <tr>
                     <th>Email:</th>
-                    <td>{user.email}</td>
+                    <td>{context.user.email}</td>
                   </tr>
                   </tbody>
                 </table>
-                <button onClick={toggleUpdate}>Update</button>
+                <button onClick={context.toggleUpdate}>Update</button>
               </div>
             }
           </div>
