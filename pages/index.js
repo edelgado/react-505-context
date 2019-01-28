@@ -1,5 +1,3 @@
-import Layout from "../components/Main"
-
 const Index = ({user}) => (
   <React.Fragment>
     <h1>{user.name}'s Accounts</h1>

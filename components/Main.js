@@ -1,6 +1,5 @@
 import Layout from '../components/Layout'
 import React from "react"
-
 import themes from '../lib/themes'
 
 class Main extends React.Component {
@@ -16,7 +15,7 @@ class Main extends React.Component {
 
   onThemeChange(name) {
     this.setState({
-      theme: themes[name]
+      theme: themes.find(theme => theme.name === name)
     })
   }
 

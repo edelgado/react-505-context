@@ -1,3 +1,5 @@
+import themes from '../lib/themes'
+
 const Profile = ({user, theme, onThemeChange}) => (
   <React.Fragment>
     <h1>{user.name}'s Profile</h1>
@@ -23,8 +25,7 @@ const Profile = ({user, theme, onThemeChange}) => (
         <h3>Settings</h3>
         <label htmlFor="theme-select">Theme:</label>
         <select id='theme-select' value={theme.name} onChange={onThemeChange}>
-          <option value="dark">Night Mode</option>
-          <option value="light">Light</option>
+          {themes.map(theme => <option key={`theme-${theme.name}`} value={theme.name}>{theme.label}</option>)}
         </select>
       </div>
     </div>
