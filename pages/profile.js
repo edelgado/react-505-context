@@ -1,25 +1,45 @@
 import themes from '../lib/themes'
 
-const Profile = ({user, theme, onThemeChange}) => (
+const Profile = ({ user,
+                   theme,
+                   onThemeChange,
+                   toggleUpdate,
+                   handleUpdate
+                 }) => (
   <React.Fragment>
     <h1>{user.name}'s Profile</h1>
     <div className="clearfix">
       <div className="card">
         <h3>Contact Information</h3>
-        <table>
-          <thead>
-          <tr>
-            <th>Name:</th>
-            <td>{user.name}</td>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <th>Email:</th>
-            <td>{user.email}</td>
-          </tr>
-          </tbody>
-        </table>
+        {user.updating ?
+          <form onSubmit={handleUpdate}>
+            <label>
+              Name: <input type="text" name="userName" defaultValue={user.name}/>
+            </label>
+            <label>
+              Email: <input type="text" name="userEmail" defaultValue={user.email}/>
+            </label>
+            <input type="submit" value="Save" />
+          </form>
+          :
+          <div>
+            <table>
+              <thead>
+              <tr>
+                <th>Name:</th>
+                <td>{user.name}</td>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <th>Email:</th>
+                <td>{user.email}</td>
+              </tr>
+              </tbody>
+            </table>
+            <button onClick={toggleUpdate}>Update</button>
+          </div>
+        }
       </div>
       <div className="card">
         <h3>Settings</h3>
@@ -30,9 +50,6 @@ const Profile = ({user, theme, onThemeChange}) => (
       </div>
     </div>
     <style jsx>{`
-      label {
-        padding-right: 10px;
-      }
       select {
         font-size: .9rem;
         padding: 2px 5px;
