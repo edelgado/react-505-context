@@ -1,5 +1,5 @@
+import React from 'react'
 import Layout from '../components/Layout'
-import React from "react"
 import themes from '../lib/themes'
 
 class Main extends React.Component {
@@ -10,7 +10,7 @@ class Main extends React.Component {
       updating: false
     },
     theme: {
-      ...themes.find(theme => theme.name === 'light')
+      ...themes[0]
     }
   }
 
