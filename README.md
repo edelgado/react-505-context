@@ -1,7 +1,7 @@
 # 505 React
 ## React Context API
 
-Welcome 505 React peeps! This is a sample app that we'll be building together to demonstrate the React Context API.
+Welcome 505 React peeps! This is a sample app that we'll be building together to demonstrate the React Context API. Presentation slides available [here](https://docs.google.com/presentation/d/1lme1OPt8izOrz6Tc5YPkSDayWOOvbs6rIE1I4FHpUeU/edit?usp=sharing).
 
 ### Setup
 
