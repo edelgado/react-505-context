@@ -1,8 +1,8 @@
 import themes from '../lib/themes'
-import UserContext from "../components/UserContext"
+import { UserConsumer } from "../components/UserContext"
 
 const Profile = ({theme, onThemeChange}) => (
-  <UserContext.Consumer>
+  <UserConsumer>
     {(context) => (
       <React.Fragment>
         <h1>{context.user.name}'s Profile</h1>
@@ -55,7 +55,7 @@ const Profile = ({theme, onThemeChange}) => (
         `}</style>
       </React.Fragment>
     )}
-  </UserContext.Consumer>
+  </UserConsumer>
 )
 
 export default Profile

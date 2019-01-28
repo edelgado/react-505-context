@@ -1,15 +1,10 @@
 import React from 'react'
 import Layout from '../components/Layout'
 import themes from '../lib/themes'
-import UserContext from '../components/UserContext'
+import { UserProvider } from '../components/UserContext'
 
 class Main extends React.Component {
   state = {
-    user: {
-      name: 'Peter',
-      email: 'pete@aol.com',
-      updating: false
-    },
     theme: {
       ...themes[0]
     }
@@ -21,39 +16,9 @@ class Main extends React.Component {
     })
   }
 
-  toggleUpdate() {
-    this.setState({
-      user: {
-        ...this.state.user,
-        updating: !this.state.user.updating
-      }
-    })
-  }
-
-  handleUpdate(e) {
-    e.preventDefault()
-    const form = e.target
-    const data = {}
-    for (let element of form.elements) {
-      if (element.name === '') { continue; }
-      data[element.name] = element.value;
-    }
-    this.setState({
-      user: {
-        name: data.userName,
-        email: data.userEmail,
-        updating: false
-      }
-    })
-  }
-
   render() {
     return(
-      <UserContext.Provider value={{
-        user: this.state.user,
-        toggleUpdate: () => this.toggleUpdate(),
-        handleUpdate: (e) => this.handleUpdate(e)
-      }}>
+      <UserProvider>
         <React.Fragment>
           <Layout
             theme={this.state.theme}
@@ -117,7 +82,7 @@ class Main extends React.Component {
               }
           `}</style>
         </React.Fragment>
-      </UserContext.Provider>
+      </UserProvider>
     )
   }
 }

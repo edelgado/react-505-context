@@ -1,8 +1,8 @@
 import Link from 'next/link'
-import UserContext  from "./UserContext"
+import { UserConsumer }  from "./UserContext"
 
 const Header = ({theme}) => (
-  <UserContext.Consumer>
+  <UserConsumer>
     {(context) => (
       <div className="header">
         <Link href="/">
@@ -25,7 +25,7 @@ const Header = ({theme}) => (
         `}</style>
       </div>
     )}
-  </UserContext.Consumer>
+  </UserConsumer>
 )
 
 export default Header
