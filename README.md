@@ -15,7 +15,25 @@ Install dependencies:
 yarn install
 ```
 
+Move to starting point:
+```
+git checkout start
+git checkout -b exercise
+```
+
 Run the app:
 ```
 yarn run dev
 ```
+
+### Troubleshooting
+
+If you get stuck at any step in the exercise, you can catch up by moving to the code at a certain step:
+
+```
+git checkout step02
+git checkout -b exercise-from-step02
+```
+
+Available steps are:
+* `start`, `step01`, `step02`, `step03`, `step04`, `step05`.
