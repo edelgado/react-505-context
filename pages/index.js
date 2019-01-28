@@ -1,4 +1,4 @@
-import { UserContext } from "../components/Main"
+import UserContext from "../components/UserContext"
 
 const Index = () => (
   <UserContext.Consumer>

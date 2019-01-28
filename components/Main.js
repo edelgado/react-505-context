@@ -1,8 +1,7 @@
 import React from 'react'
 import Layout from '../components/Layout'
 import themes from '../lib/themes'
-
-export const UserContext = React.createContext()
+import UserContext from '../components/UserContext'
 
 class Main extends React.Component {
   state = {

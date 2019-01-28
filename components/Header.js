@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { UserContext } from "./Main"
+import UserContext  from "./UserContext"
 
 const Header = ({theme }) => (
   <UserContext.Consumer>
