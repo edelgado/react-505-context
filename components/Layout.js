@@ -1,15 +1,18 @@
+import Head from "next/head"
 import Header from './Header'
 
-const layoutStyle = {
-  margin: 20,
-  padding: 20,
-  border: '1px solid #DDD'
-}
-
 const Layout = (props) => (
-  <div style={layoutStyle}>
-    <Header />
-    { props.children }
+  <div className="container">
+    <Head>
+      <title>My Bank</title>
+    </Head>
+    <Header user={props.user} theme={props.theme}/>
+
+    {React.cloneElement(props.children, props)}
+
+    <style jsx>{`
+      padding: 1rem;
+    `}</style>
   </div>
 )
 

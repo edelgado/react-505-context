@@ -1,8 +1,7 @@
 import React from 'react'
 import App, { Container } from 'next/app'
-import Head from 'next/head'
 
-import Layout from '../components/Layout'
+import Main from '../components/Main'
 
 export default class MyApp extends App {
   static async getInitialProps({ Component, router, ctx }) {
@@ -20,35 +19,9 @@ export default class MyApp extends App {
 
     return (
       <Container>
-        <Head>
-          <title>My Bank - Enrique's Account</title>
-        </Head>
-        <Layout>
+        <Main>
           <Component {...pageProps} />
-        </Layout>
-        <style jsx global>{`
-          body {
-            font-family: "Arial";
-            color: #1F1F1F;
-          }
-          table {
-            padding: 1rem;
-            border: 1px #DDD solid;
-          }
-          th {
-            min-width: 6rem;
-            text-align: left;
-          }
-          .card {
-            float: left;
-            margin-right: 3rem;
-          }
-          .clearfix::after {
-            display: block;
-            content: "";
-            clear: both;
-          }
-      `}</style>
+        </Main>
       </Container>
     )
   }

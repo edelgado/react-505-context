@@ -1,6 +1,8 @@
-const Index = () => (
+import Layout from "../components/Main"
+
+const Index = ({user}) => (
   <React.Fragment>
-    <h1>My Accounts</h1>
+    <h1>{user.name}'s Accounts</h1>
     <div className="clearfix">
       <div className="card">
         <h3>Checking</h3>

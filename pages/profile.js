@@ -1,8 +1,6 @@
-import Layout from "../components/Layout"
-
-export default () => (
+const Profile = ({user, theme, onThemeChange}) => (
   <React.Fragment>
-    <h1>My Profile</h1>
+    <h1>{user.name}'s Profile</h1>
     <div className="clearfix">
       <div className="card">
         <h3>Contact Information</h3>
@@ -10,13 +8,13 @@ export default () => (
           <thead>
           <tr>
             <th>Name:</th>
-            <td>Enrique</td>
+            <td>{user.name}</td>
           </tr>
           </thead>
           <tbody>
           <tr>
             <th>Email:</th>
-            <td>foo@bar.com</td>
+            <td>{user.email}</td>
           </tr>
           </tbody>
         </table>
@@ -24,7 +22,7 @@ export default () => (
       <div className="card">
         <h3>Settings</h3>
         <label htmlFor="theme-select">Theme:</label>
-        <select id='theme-select'>
+        <select id='theme-select' value={theme.name} onChange={onThemeChange}>
           <option value="dark">Night Mode</option>
           <option value="light">Light</option>
         </select>
@@ -41,3 +39,5 @@ export default () => (
     `}</style>
   </React.Fragment>
 )
+
+export default Profile
