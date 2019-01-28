@@ -6,7 +6,7 @@ const Layout = (props) => (
     <Head>
       <title>My Bank</title>
     </Head>
-    <Header user={props.user} theme={props.theme}/>
+    <Header theme={props.theme}/>
 
     {React.cloneElement(props.children, props)}
 
